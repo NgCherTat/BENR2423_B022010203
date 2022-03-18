@@ -1,0 +1,126 @@
+MongoDB Enterprise atlas-h4ts99-shard-0:PRIMARY> db.zips.find({"state": "NY"})
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72f8d"), "city" : "NEW YORK", "zip" : "10005", "loc" : { "y" : 40.705649, "x" : 74.008344 }, "pop" : 202, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72f8a"), "city" : "NEW YORK", "zip" : "10001", "loc" : { "y" : 40.74838, "x" : 73.996705 }, "pop" : 18913, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72f89"), "city" : "FISHERS ISLAND", "zip" : "06390", "loc" : { "y" : 41.263934, "x" : 72.017834 }, "pop" : 329, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72f8c"), "city" : "GOVERNORS ISLAND", "zip" : "10004", "loc" : { "y" : 40.693604, "x" : 74.019025 }, "pop" : 3593, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72f8b"), "city" : "NEW YORK", "zip" : "10003", "loc" : { "y" : 40.731253, "x" : 73.989223 }, "pop" : 51224, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72f95"), "city" : "NEW YORK", "zip" : "10011", "loc" : { "y" : 40.740225, "x" : 73.99963 }, "pop" : 46560, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72f8f"), "city" : "NEW YORK", "zip" : "10006", "loc" : { "y" : 40.708451, "x" : 74.013474 }, "pop" : 119, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72f97"), "city" : "NEW YORK", "zip" : "10013", "loc" : { "y" : 40.718511, "x" : 74.002529 }, "pop" : 21860, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72f92"), "city" : "NEW YORK", "zip" : "10010", "loc" : { "y" : 40.737476, "x" : 73.981328 }, "pop" : 24907, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72fa4"), "city" : "NEW YORK", "zip" : "10027", "loc" : { "y" : 40.811556, "x" : 73.954978 }, "pop" : 54631, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72fb2"), "city" : "NEW YORK", "zip" : "10038", "loc" : { "y" : 40.710092, "x" : 74.001298 }, "pop" : 14015, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72fb3"), "city" : "NEW YORK", "zip" : "10039", "loc" : { "y" : 40.826458, "x" : 73.938266 }, "pop" : 25293, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72fb7"), "city" : "NEW YORK", "zip" : "10044", "loc" : { "y" : 40.762998, "x" : 73.949136 }, "pop" : 8190, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72fb9"), "city" : "STATEN ISLAND", "zip" : "10302", "loc" : { "y" : 40.630597, "x" : 74.137918 }, "pop" : 13369, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72fbb"), "city" : "STATEN ISLAND", "zip" : "10305", "loc" : { "y" : 40.597296, "x" : 74.076795 }, "pop" : 30513, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72fc4"), "city" : "BRONX", "zip" : "10457", "loc" : { "y" : 40.848635, "x" : 73.899907 }, "pop" : 62133, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72fcd"), "city" : "STATEN ISLAND", "zip" : "10310", "loc" : { "y" : 40.632427, "x" : 74.11715 }, "pop" : 20282, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72fd1"), "city" : "BRONX", "zip" : "10464", "loc" : { "y" : 40.846941, "x" : 73.787436 }, "pop" : 4113, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72fd3"), "city" : "BRONX", "zip" : "10467", "loc" : { "y" : 40.873671, "x" : 73.871242 }, "pop" : 85710, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72fd4"), "city" : "BRONX", "zip" : "10466", "loc" : { "y" : 40.890375, "x" : 73.850333 }, "pop" : 58394, "state" : "NY" }
+Type "it" for more
+MongoDB Enterprise atlas-h4ts99-shard-0:PRIMARY> it
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72fd7"), "city" : "BRONX", "zip" : "10471", "loc" : { "y" : 40.901084, "x" : 73.905283 }, "pop" : 23348, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72fd9"), "city" : "BRONX", "zip" : "10473", "loc" : { "y" : 40.819364, "x" : 73.860626 }, "pop" : 53981, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72fe4"), "city" : "CARMEL", "zip" : "10512", "loc" : { "y" : 41.443216, "x" : 73.681526 }, "pop" : 20716, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72ffb"), "city" : "MONTROSE", "zip" : "10548", "loc" : { "y" : 41.249585, "x" : 73.944593 }, "pop" : 4350, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca72ffe"), "city" : "HAWTHORNE", "zip" : "10532", "loc" : { "y" : 41.095316, "x" : 73.801685 }, "pop" : 7258, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca73007"), "city" : "POUND RIDGE", "zip" : "10576", "loc" : { "y" : 41.204196, "x" : 73.573215 }, "pop" : 4720, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca7300d"), "city" : "PUTNAM VALLEY", "zip" : "10579", "loc" : { "y" : 41.372815, "x" : 73.85024 }, "pop" : 7453, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca7300e"), "city" : "RYE", "zip" : "10580", "loc" : { "y" : 40.973403, "x" : 73.690721 }, "pop" : 16479, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca73014"), "city" : "WHITE PLAINS", "zip" : "10603", "loc" : { "y" : 41.049913, "x" : 73.77758 }, "pop" : 14342, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca73027"), "city" : "CHESTER", "zip" : "10918", "loc" : { "y" : 41.355381, "x" : 74.265116 }, "pop" : 9196, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca7302a"), "city" : "NEW ROCHELLE", "zip" : "10801", "loc" : { "y" : 40.916628, "x" : 73.787729 }, "pop" : 30929, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca7302d"), "city" : "CAMPBELL HALL", "zip" : "10916", "loc" : { "y" : 41.442993, "x" : 74.250466 }, "pop" : 3065, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca73034"), "city" : "HIGHLAND FALLS", "zip" : "10928", "loc" : { "y" : 41.358177, "x" : 73.974618 }, "pop" : 5704, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca73036"), "city" : "BARDONIA", "zip" : "10954", "loc" : { "y" : 41.099176, "x" : 74.009589 }, "pop" : 16390, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca73039"), "city" : "MONROE", "zip" : "10950", "loc" : { "y" : 41.328578, "x" : 74.188521 }, "pop" : 30829, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca73040"), "city" : "PIERMONT", "zip" : "10968", "loc" : { "y" : 41.03955, "x" : 73.919187 }, "pop" : 2104, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca73042"), "city" : "OTISVILLE", "zip" : "10963", "loc" : { "y" : 41.481806, "x" : 74.529413 }, "pop" : 4748, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca73051"), "city" : "WEST POINT", "zip" : "10996", "loc" : { "y" : 41.394545, "x" : 73.973666 }, "pop" : 7979, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca7305b"), "city" : "KINGS POINT CONT", "zip" : "11024", "loc" : { "y" : 40.813307, "x" : 73.741391 }, "pop" : 7298, "state" : "NY" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca73069"), "city" : "BROOKLYN", "zip" : "11207", "loc" : { "y" : 40.670486, "x" : 73.893957 }, "pop" : 83158, "state" : "NY" }
+Type "it" for more
+MongoDB Enterprise atlas-h4ts99-shard-0:PRIMARY> db.zips.find({"state": "NY"}).count()
+1596
+MongoDB Enterprise atlas-h4ts99-shard-0:PRIMARY> db.zips.find({"state": "NY","city":"ALBANY"}).count()
+7
+MongoDB Enterprise atlas-h4ts99-shard-0:PRIMARY> db.zips.find({"state": "NY","city":"ALBANY"}).pretty()
+{
+        "_id" : ObjectId("5c8eccc1caa187d17ca731d4"),
+        "city" : "ALBANY",
+        "zip" : "12206",
+        "loc" : {
+                "y" : 42.668326,
+                "x" : 73.774406
+        },
+        "pop" : 17230,
+        "state" : "NY"
+}
+{
+        "_id" : ObjectId("5c8eccc1caa187d17ca731d5"),
+        "city" : "ALBANY",
+        "zip" : "12207",
+        "loc" : {
+                "y" : 42.658133,
+                "x" : 73.752327
+        },
+        "pop" : 2709,
+        "state" : "NY"
+}
+{
+        "_id" : ObjectId("5c8eccc1caa187d17ca731d0"),
+        "city" : "ALBANY",
+        "zip" : "12204",
+        "loc" : {
+                "y" : 42.684667,
+                "x" : 73.735364
+        },
+        "pop" : 6927,
+        "state" : "NY"
+}
+{
+        "_id" : ObjectId("5c8eccc1caa187d17ca731d7"),
+        "city" : "ALBANY",
+        "zip" : "12209",
+        "loc" : {
+                "y" : 42.641665,
+                "x" : 73.785385
+        },
+        "pop" : 10008,
+        "state" : "NY"
+}
+{
+        "_id" : ObjectId("5c8eccc1caa187d17ca731d6"),
+        "city" : "ALBANY",
+        "zip" : "12208",
+        "loc" : {
+                "y" : 42.655989,
+                "x" : 73.796357
+        },
+        "pop" : 22041,
+        "state" : "NY"
+}
+{
+        "_id" : ObjectId("5c8eccc1caa187d17ca731db"),
+        "city" : "ALBANY",
+        "zip" : "12202",
+        "loc" : {
+                "y" : 42.641314,
+                "x" : 73.764071
+        },
+        "pop" : 11097,
+        "state" : "NY"
+}
+{
+        "_id" : ObjectId("5c8eccc1caa187d17ca731de"),
+        "city" : "ALBANY",
+        "zip" : "12210",
+        "loc" : {
+                "y" : 42.65677,
+                "x" : 73.76052
+        },
+        "pop" : 9374,
+        "state" : "NY"
+}
