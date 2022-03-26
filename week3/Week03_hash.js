@@ -30,8 +30,9 @@ client.connect(async err => {
                     
                     //console.log(new_password)
                     name.push({ Name, new_password});
-                    client.db("Week3").collection("hash").insertMany(name).then(result => {
+                    client.db("week3").collection("hash_file").insertMany(name).then(result => {
                         console.log(result);
+                    
                     });
                 }
             })
