@@ -27,7 +27,7 @@ Lab:$expr
 db.companies.find({ "$expr": { "$eq": [ "$permalink", "$twitter_username"] }}).count()
 1299
 
-Lab 2: Array Operators
+Lab 1: Array Operators
 db.listingsAndReviews.find({"$and" : [{ "accommodates": {"$gt" : 6}},{"reviews": {"$size": 50}}]}).pretty()
 {
         "_id" : "4294289",
