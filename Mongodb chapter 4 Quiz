@@ -1,0 +1,567 @@
+Comparison Operator
+1. 
+db.zips.find({"pop":{"$lt" : 1000}}).count()
+8065
+
+2.
+db.trips.find({"birth year": {"$gt": 1998}}).count()
+18
+db.trips.find({"birth year": 1998}).count()
+12
+
+
+Logic Operators Quiz 1: 
+db.inspections.find({"$and":[{"result" : "Out of Business"}, {"sector": "Home Improvement Contractor - 100"}]}).count()
+4
+
+Lab1: Logic Operators
+db.zips.find({"$and":[{"pop": {"$lte": 1000000}},{"pop": {"$gte" : 5000}}]}).count()
+11193
+
+Lab1: Logic Operators
+db.companies.find({"$or":[{"$and": [{"founded_year": 2004},{"$or":[{"category_code": "web"},{"category_code": "social"}]}]},{"$and": [{"founded_month": 10},{"$or" :[{"category_code": "web"},{"category_code": "social"}]}]}]}).count()
+149
+
+
+Lab:$expr
+db.companies.find({ "$expr": { "$eq": [ "$permalink", "$twitter_username"] }}).count()
+1299
+
+Lab 2: Array Operators
+db.listingsAndReviews.find({"$and" : [{ "accommodates": {"$gt" : 6}},{"reviews": {"$size": 50}}]}).pretty()
+{
+        "_id" : "4294289",
+        "listing_url" : "https://www.airbnb.com/rooms/4294289",
+        "name" : "Sunset Beach Lodge Retreat",
+        "summary" : "Large 3 bedrooms, 2 bathrooms with Office Space on 1 acre property just 150 yards from Sunset Beach.",
+        "space" : "This amazing lodge style home is one of da kind home on the North Shore. Lovely & quiet, Private with 3 bedroom, 2 bathroom around 2000 Square Foot and 150 yards from famous Sunset Beach. The house is a upstairs Unit (downstairs is a 2 bedroom vacation rental) on our 1 acre of beautifully landscaped garden with tons of fruits like mango trees, orange trees, Jack fruit just to name a few. It is self catered with a fully equipped kitchen, dining area, living room , bathroom, master bedroom, queen bedroom, & double bedroom plus washer and dryer on site. This property has been renovated inside to give our vacationers the comfort of the modern houses with a large LED 60\" TV, wireless internet (50 Mgbytes) and more. You will afford the best location with the best price the North Shore has to offer! The property comes furnished to the highest standard with tasteful furniture throughout the house. Bed linens are of the highest quality as well as the bath towels. Beach towels are provided for e",
+        "description" : "Large 3 bedrooms, 2 bathrooms with Office Space on 1 acre property just 150 yards from Sunset Beach. This amazing lodge style home is one of da kind home on the North Shore. Lovely & quiet, Private with 3 bedroom, 2 bathroom around (Phone number hidden by Airbnb) Square Foot and 150 yards from famous Sunset Beach. The house is a upstairs Unit (downstairs is a 2 bedroom vacation rental) on our 1 acre of beautifully landscaped garden with tons of fruits like mango trees, orange trees, Jack fruit just to name a few. It is self catered with a fully equipped kitchen, dining area, living room , bathroom, master bedroom, queen bedroom, & double bedroom plus washer and dryer on site. This property has been renovated inside to give our vacationers the comfort of the modern houses with a large LED 60\" TV, wireless internet (50 Mgbytes) and more. You will afford the best location with the best price the North Shore has to offer! The property comes furnished to the highest standard with tasteful f",
+        "neighborhood_overview" : "Sunset Beach area is one of the prestigious place in Hawaii...",
+        "notes" : "(Phone number hidden by Airbnb)",
+        "transit" : "",
+        "access" : "The entire upstairs unit. Parking Lot.",
+        "interaction" : "We welcome you with sincere aloha and will go above & beyond to make the best of your stay!! I don't live on the property, but am not far away in case you need anything.",
+        "house_rules" : "No smoke in the house!  No loud parties!",
+        "property_type" : "House",
+        "room_type" : "Entire home/apt",
+        "bed_type" : "Real Bed",
+        "minimum_nights" : "3",
+        "maximum_nights" : "1125",
+        "cancellation_policy" : "strict_14_with_grace_period",
+        "last_scraped" : ISODate("2019-03-06T05:00:00Z"),
+        "calendar_last_scraped" : ISODate("2019-03-06T05:00:00Z"),
+        "first_review" : ISODate("2015-05-02T04:00:00Z"),
+        "last_review" : ISODate("2019-02-18T05:00:00Z"),
+        "accommodates" : 8,
+        "bedrooms" : 3,
+        "beds" : 6,
+        "number_of_reviews" : 50,
+        "bathrooms" : NumberDecimal("2.0"),
+        "amenities" : [
+                "TV",
+                "Cable TV",
+                "Internet",
+                "Wifi",
+                "Kitchen",
+                "Free parking on premises",
+                "Family/kid friendly",
+                "Washer",
+                "Dryer",
+                "Smoke detector",
+                "Carbon monoxide detector",
+                "First aid kit",
+                "Essentials",
+                "Shampoo",
+                "24-hour check-in",
+                "Hangers",
+                "Hair dryer",
+                "Iron",
+                "Laptop friendly workspace",
+                "Self check-in",
+                "Lockbox"
+        ],
+        "price" : NumberDecimal("250.00"),
+        "security_deposit" : NumberDecimal("500.00"),
+        "cleaning_fee" : NumberDecimal("300.00"),
+        "extra_people" : NumberDecimal("40.00"),
+        "guests_included" : NumberDecimal("4"),
+        "images" : {
+                "thumbnail_url" : "",
+                "medium_url" : "",
+                "picture_url" : "https://a0.muscache.com/im/pictures/54064265/481c831b_original.jpg?aki_policy=large",
+                "xl_picture_url" : ""
+        },
+        "host" : {
+                "host_id" : "13508451",
+                "host_url" : "https://www.airbnb.com/users/show/13508451",
+                "host_name" : "Anderson",
+                "host_location" : "Haleiwa, Hawaii, United States",
+                "host_about" : "Hi,\r\nMy name is Anderson and these are my 2 kids...Our princess Maite and our warrior Davi. With my wife (does not want be in the pic...hahahah) We live only 30 yards from the property and we are always trying to improve our rental to completely satisfy our guest. We are new on the business but we are always available for comments and help!!! Aloha!!!",
+                "host_response_time" : "within an hour",
+                "host_thumbnail_url" : "https://a0.muscache.com/im/users/13508451/profile_pic/1396827691/original.jpg?aki_policy=profile_small",
+                "host_picture_url" : "https://a0.muscache.com/im/users/13508451/profile_pic/1396827691/original.jpg?aki_policy=profile_x_medium",
+                "host_neighbourhood" : "North Shore",
+                "host_response_rate" : 100,
+                "host_is_superhost" : false,
+                "host_has_profile_pic" : true,
+                "host_identity_verified" : false,
+                "host_listings_count" : 4,
+                "host_total_listings_count" : 4,
+                "host_verifications" : [
+                        "email",
+                        "phone",
+                        "reviews",
+                        "jumio",
+                        "government_id"
+                ]
+        },
+        "address" : {
+                "street" : "Haleiwa, HI, United States",
+                "suburb" : "North Shore",
+                "government_area" : "North Shore Oahu",
+                "market" : "Oahu",
+                "country" : "United States",
+                "country_code" : "US",
+                "location" : {
+                        "type" : "Point",
+                        "coordinates" : [
+                                -158.03732,
+                                21.67469
+                        ],
+                        "is_location_exact" : true
+                }
+        },
+        "availability" : {
+                "availability_30" : 6,
+                "availability_60" : 28,
+                "availability_90" : 50,
+                "availability_365" : 308
+        },
+        "review_scores" : {
+                "review_scores_accuracy" : 10,
+                "review_scores_cleanliness" : 10,
+                "review_scores_checkin" : 10,
+                "review_scores_communication" : 10,
+                "review_scores_location" : 10,
+                "review_scores_value" : 10,
+                "review_scores_rating" : 97
+        },
+        "reviews" : [
+                {
+                        "_id" : "31113473",
+                        "date" : ISODate("2015-05-02T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "20355921",
+                        "reviewer_name" : "Elizabeth",
+                        "comments" : "Spacious house with wonderful natural lighting and windows/doors everywhere to let in the fresh Hawaii breeze. This was my first trip to Hawaii and I am glad I was able to experience the peace and quiet this listing provided for me. Anderson was very supportive and prompt in answering all of my questions and providing assistance during my stay and his wife was also a truly lovely, gracious host. Great experience, appreciate it and would stay again if I returned. Private, laid back atmosphere, juicer in kitchen, comfortable beds... No complaints here :) - Thanks again guys! "
+                },
+                {
+                        "_id" : "32804136",
+                        "date" : ISODate("2015-05-21T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "10654833",
+                        "reviewer_name" : "Wendell",
+                        "comments" : "The host canceled this reservation 106 days before arrival. This is an automated posting."
+                },
+                {
+                        "_id" : "33893101",
+                        "date" : ISODate("2015-06-02T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "14287063",
+                        "reviewer_name" : "Autumn",
+                        "comments" : "Andersons house was perfect for our large family!  Sunset Beach was a 5 min walk from the house,  and our favorite  beach Waimea Bay was a short drive away! We loved the beautiful lush vegitation on the property as well! We would definitely stay there again ! Thanks!"
+                },
+                {
+                        "_id" : "35284846",
+                        "date" : ISODate("2015-06-17T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "4691264",
+                        "reviewer_name" : "John",
+                        "comments" : "The house was in a great location and very comfortable. It was true to the description on airbnb and when we had a problem it was fixed quickly. The beds were comfortable and the rooms were clean. Our only complaint would be the ants that were pervasive in the bathrooms and kitchen."
+                },
+                {
+                        "_id" : "37137967",
+                        "date" : ISODate("2015-07-05T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "29013555",
+                        "reviewer_name" : "Christopher",
+                        "comments" : "Excellent place to stay.  Exactly as shown in the pictures.  Nice and comfortable close to Ted's bakery and the beach."
+                },
+                {
+                        "_id" : "44895397",
+                        "date" : ISODate("2015-08-30T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "1178523",
+                        "reviewer_name" : "Tayler Marie",
+                        "comments" : "We loved staying at the Sunset Beach Lodge! It was perfect for our group. The house was clean and spacious. Wonderful location being right across from Sunset beach! The owner was always responsive and helpful. We highly recommend this place for your stay in Hawaii! Mahalo!"
+                },
+                {
+                        "_id" : "49739983",
+                        "date" : ISODate("2015-10-05T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "44891029",
+                        "reviewer_name" : "Matt",
+                        "comments" : "Amazing place. Super hospitable host, everything was just as described. Will come back again and surf the North Shore. Upstairs has a lot of open space"
+                },
+                {
+                        "_id" : "50433891",
+                        "date" : ISODate("2015-10-12T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "25046592",
+                        "reviewer_name" : "Luke",
+                        "comments" : "This place is awesome. If you like a wide open yard in a beautiful country area, this is it. Take an easy hike to a waterfall in Waimea Valley (don't forget your swimsuit!). Or take your little ones to Pūpūkea Beach Park and walk around in a lagoon full of interesting fish. There's also the Turtle Bay Resort very close by for a ton of other stuff to do. Oh and don't forget Ted's Bakery. Just like it says in the listing -- you can walk right there! It's just up the road. More chocolate haupia pie, please.\r\n\r\nAnderson was right on site to check us in and was a great host -- super responsive when you've got questions, hands off when you're doing your own thing. He also has kids of his own and left out some toys in a play area for our little ones to have a ball with. I'd come back in a heartbeat."
+                },
+                {
+                        "_id" : "53603447",
+                        "date" : ISODate("2015-11-10T05:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "6744173",
+                        "reviewer_name" : "Lucas",
+                        "comments" : "Anderson is great host. He gave us all instructions to get in his place and everything went great. His house is amazing and just a few minutos walking from Sunset beach. I would definitely stay there next time I go to Oahu. Thanks for the hospitality!"
+                },
+                {
+                        "_id" : "57003367",
+                        "date" : ISODate("2015-12-21T05:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "29914817",
+                        "reviewer_name" : "Holly",
+                        "comments" : "Anderson was easily contactable throughout the whole process and always replied to any queries promptly. The house was in a great location and was clean and airy. Would highly recommend staying here."
+                },
+                {
+                        "_id" : "61902303",
+                        "date" : ISODate("2016-02-09T05:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "45156025",
+                        "reviewer_name" : "Paula",
+                        "comments" : "Sensacional! Passamos uma semana em Sunset, nessa casa que é uma delícia. Tudo muito limpo, espaçoso, camas maravilhosas, toalhas e lençóis super bons. A localização não poderia ser melhor, é só atravessar a estrada caminhar uns 3 minutos e já estamos na praia! Usamos muito as bicicletas, até para ir ao super, pois era mais gostoso. A ciclovia passa na frente da casa e é muito panorâmica! Todos os utensílios domésticos eram muito bons. A sala e a varanda são muito legais"
+                },
+                {
+                        "_id" : "62616988",
+                        "date" : ISODate("2016-02-15T05:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "2211152",
+                        "reviewer_name" : "Mariusz",
+                        "comments" : "The host canceled this reservation 121 days before arrival. This is an automated posting."
+                },
+                {
+                        "_id" : "68872491",
+                        "date" : ISODate("2016-04-07T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "53171174",
+                        "reviewer_name" : "Noriko",
+                        "comments" : "We love this lodge! Decorated with surf board and posters, lots of sunlight, perfect location, well-designed kitchen and bedrooms, toys for kids... The owner responded very quick to our questions, and very helpful. Many many thanks!"
+                },
+                {
+                        "_id" : "74030319",
+                        "date" : ISODate("2016-05-12T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "1192255",
+                        "reviewer_name" : "Justin",
+                        "comments" : "Check-in was easy. Everything as described. Awesome location. Private and quiet."
+                },
+                {
+                        "_id" : "77381186",
+                        "date" : ISODate("2016-05-31T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "4170585",
+                        "reviewer_name" : "Kay",
+                        "comments" : "We so loved staying here!  It really is only steps to Sunset Beach and the fruit trees and chickens, coupled with the wonderful evening breezes make this a wonderful natural retreat.  There was plenty of room for us all - and everything was clean and comfortable.  We especially appreciated how kid friendly this property is.  There were kids' dishes in the cupboard and a designated little play area stocked with toys.  Traveling with a two year old can be challenging and Sunset Beach Lodge Retreat made it so easy!  Thank you, Anderson - if you will have us, we will be back."
+                },
+                {
+                        "_id" : "110508386",
+                        "date" : ISODate("2016-10-26T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "8164934",
+                        "reviewer_name" : "Alvin",
+                        "comments" : "The Sunset Beach Lodge Retreat was as described, our stay was great and there was a Surf competition just a few minutes walk away. The only disclaimer that could have been added was that toilet paper was not allowed to be flushed down the toilet, as some of the guests were a bit uncomfortable with that. "
+                },
+                {
+                        "_id" : "120098198",
+                        "date" : ISODate("2016-12-07T05:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "18366988",
+                        "reviewer_name" : "Andrew",
+                        "comments" : "Great place, really enjoyed our stayl"
+                },
+                {
+                        "_id" : "127378979",
+                        "date" : ISODate("2017-01-17T05:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "39202087",
+                        "reviewer_name" : "Mark",
+                        "comments" : "Anderson's property is the perfect house when you want to be away from the crowded scene. It is the perfect beach house with the ocean just a few minutes away by walking. Within a radius of 2-4 miles you have a wide selection of food trucks and grocery store to keep you secure with food. It is a great location if you are planning a trip that includes visiting the dole plantation, Polynesian center, Giovanni shrimp truck and north shore beach! "
+                },
+                {
+                        "_id" : "135036063",
+                        "date" : ISODate("2017-03-02T05:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "13936036",
+                        "reviewer_name" : "Paul",
+                        "comments" : "Great place up on the north shore with everything you need."
+                },
+                {
+                        "_id" : "145329974",
+                        "date" : ISODate("2017-04-17T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "33462783",
+                        "reviewer_name" : "J. Mark",
+                        "comments" : "Cool place, great location in North Shore!"
+                },
+                {
+                        "_id" : "152685151",
+                        "date" : ISODate("2017-05-17T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "7872297",
+                        "reviewer_name" : "Georgia",
+                        "comments" : "This place was great! My husband and I ended up here after  arriving in Waikiki and quickly realizing that Waikiki was not the Hawaii experience we were looking for. It was great that Anderson was able to get the place ready for us on such short notice. The place was big, open, airy, clean. Location was great, just a short walk to Sunset beach, near a bike path that goes all the way to the grocery store and food trucks down the road. We would definitely stay here again!"
+                },
+                {
+                        "_id" : "154295857",
+                        "date" : ISODate("2017-05-23T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "11639939",
+                        "reviewer_name" : "Chad",
+                        "comments" : "Anderson's place is fantastic! Extremely short walk from the beach, next door to Ted's Bakery, and also a spacious, clean house with a lot of outdoor space. This was a great hub for visiting Haleiwa and Waimea Bay."
+                },
+                {
+                        "_id" : "162656329",
+                        "date" : ISODate("2017-06-21T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "37818102",
+                        "reviewer_name" : "Neel",
+                        "comments" : "We loved our relaxing stay at this cute and comfortable property and hanging out at the beaches nearby with the kids! The home was neat and comfortable just as shown in the pictures. The proximity to food trucks and a well equipped kitchen helped us fix quick meals. The kids (three toddlers) esp loved the neat little play area. We really appreciated having the coffee maker, the blender and the washer dryer - they really came in handy. We reported a stuck door lock and Anderson was very prompt to swing by and take care of it.  All in all this was a perfect base for our Oahu trip with three toddlers eager to hit the beaches!! "
+                },
+                {
+                        "_id" : "164330838",
+                        "date" : ISODate("2017-06-27T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "68623919",
+                        "reviewer_name" : "Sabrina",
+                        "comments" : "This location was beautiful!!"
+                },
+                {
+                        "_id" : "167399655",
+                        "date" : ISODate("2017-07-06T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "112471252",
+                        "reviewer_name" : "Alexsandra",
+                        "comments" : "Anderson's has a nice home that is close to the beach. My friends and I arrived late in the day and Anderson met us downstairs. The house is spacious, with two bathrooms, which was very nice since I was sharing with 2 men & 2 boys. Its only a few minutes walk to the beach, Ted's bakery and you can lounge in the hammock on the lanai. \nThe downside; my friend and his son were sharing a room which had bedbugs. We called Anderson first thing in the AM and he said he would bring over a new mattress, mattress protector and pillows. He did replace the mattress & pillows. He apologised for the bedbugs, we appreciated that he came out took care of the mattress, but my friend and his son were covered with bites, which put a damper on their trip. They also did not want to sleep in the room again and we had 3 more nights.\nAnother downside was the bottom half of the house was having repairs and the workers shut the water off in the house.  We only found out when we went to take a shower after a day at the beach. They did their best getting the water back on, but it took awhile and we ended up being late for a show in Waikiki. \n\nAnderson and his family were very nice, he even said that we could have our music a little loud because he was working on soundproofing his home, its just with the bedbugs, I feel a discount could have been offered. Mahalo "
+                },
+                {
+                        "_id" : "195304590",
+                        "date" : ISODate("2017-09-18T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "3012748",
+                        "reviewer_name" : "Emi",
+                        "comments" : "Anderson's place was perfect for us.  We had family gatherings in town but it was so nice to retreat to our sanctuary on the North Shore. Drive was not too bad, and it is right next to Teds Pies. Our family favorite!"
+                },
+                {
+                        "_id" : "202764178",
+                        "date" : ISODate("2017-10-12T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "42341777",
+                        "reviewer_name" : "Corri",
+                        "comments" : "Great location, comfortable chilled out setting, privacy and great communication with host, I would recommend this property."
+                },
+                {
+                        "_id" : "214110363",
+                        "date" : ISODate("2017-11-24T05:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "90964743",
+                        "reviewer_name" : "Alana",
+                        "comments" : "It was a great stay, Anderson was very friendly & kind."
+                },
+                {
+                        "_id" : "221531431",
+                        "date" : ISODate("2017-12-26T05:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "138907515",
+                        "reviewer_name" : "Felipe",
+                        "comments" : "Excelente espaço, amplo, limpo e confortável. A decoração é de muito bom gosto e conforme a temática local. A localização é excepcional, em frente à praia de Sunset e logo ao lado da Ted's Bakery. Fomos recebidos gentilmente com uma caixa de chocolates havaianos, as instruções para o check-in foram claras e tudo correu como o planejado. A casa conta com uma infraestrutura ótima, com utensílios de cozinha, material de limpeza, lavanderia, bicicletas, pranchas de sue e até mesmo bermudas de praia e material de mergulho. Não poderíamos ter  ficado em um local melhor no North Shore."
+                },
+                {
+                        "_id" : "233710801",
+                        "date" : ISODate("2018-02-10T05:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "142989956",
+                        "reviewer_name" : "Dawn",
+                        "comments" : "The house was clean, well equipped and nicely furnished. We were very pleased with our stay. The only downside were the 4 am wake-ups by the roosters."
+                },
+                {
+                        "_id" : "235461290",
+                        "date" : ISODate("2018-02-16T05:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "163794229",
+                        "reviewer_name" : "Ma",
+                        "comments" : "Everything you need and then some for a house across from sunset beach."
+                },
+                {
+                        "_id" : "237149919",
+                        "date" : ISODate("2018-02-21T05:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "10439260",
+                        "reviewer_name" : "Mandy",
+                        "comments" : "No complaints here!  Anderson's place was perfect for our staycation and there was plenty of room for our family and visiting guest.  Thanks for everything!"
+                },
+                {
+                        "_id" : "243150229",
+                        "date" : ISODate("2018-03-14T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "72918349",
+                        "reviewer_name" : "Morgan",
+                        "comments" : "Perfect location, incredible views, walking distance to the best bakery in north shore, sunset beach, and banzai pipeline. Price is unbeatable! I stayed here with 5 people and we had more space than we needed! Stay here if you want to experience unforgettable memories, truly amazing! Can’t wait to come back"
+                },
+                {
+                        "_id" : "244562394",
+                        "date" : ISODate("2018-03-18T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "5231067",
+                        "reviewer_name" : "Tiffany",
+                        "comments" : "Perfect stay in north shore! Walking distance to sunset beach! Would stay here again in a heart beat!"
+                },
+                {
+                        "_id" : "246676928",
+                        "date" : ISODate("2018-03-25T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "90219053",
+                        "reviewer_name" : "Allison",
+                        "comments" : "Great spot for a smaller group. Walkable to Sunset beach and nearby groceries, food trucks, other beaches, and walking/running paths. We had 7 adults and it was a bit of a tighter squeeze for us only because it rained most of our trip which kept us inside more. Anderson was really great on communication and help as needed!"
+                },
+                {
+                        "_id" : "248574852",
+                        "date" : ISODate("2018-03-31T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "5588226",
+                        "reviewer_name" : "Kelly",
+                        "comments" : "We really enjoyed our stay at Anderson’s place. Great location, only a few minutes walk to the beach for the most beautiful sunsets. A 5 minute drive to the local food land to stock up on supplies which is also right by some of the best food trucks, specifically the Pupukea grill. Must try!\n\nThe roosters were slightly annoying being quite loud throughout the night but not so bad once the windows were closed. \n\nLarge living area and communal space with a well stocked kitchen. \n\nThanks for a great time!"
+                },
+                {
+                        "_id" : "252249990",
+                        "date" : ISODate("2018-04-09T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "6492882",
+                        "reviewer_name" : "Dominique",
+                        "comments" : "Large, comfortable, cozy place, nice large deck, great location close to the beach, nice modern washer/drier, and plenty of parking for our 3 rental cars. Would definitely rent again."
+                },
+                {
+                        "_id" : "260410132",
+                        "date" : ISODate("2018-05-04T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "172561349",
+                        "reviewer_name" : "Ericka",
+                        "comments" : "This is the perfect place to stay in Haleiwa! Walking distance from the beaches and bonzai bowls and Teds Bakery! Just minutes away from downtown Haleiwa and from Laie! They were great hosts and the accommodations were fantastic! Perfect place to stay and if we visit again this will be the place we stay ;)!! I"
+                },
+                {
+                        "_id" : "264461841",
+                        "date" : ISODate("2018-05-13T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "70009661",
+                        "reviewer_name" : "Becky",
+                        "comments" : "Anderson was a great host and this was a perfect location next to Sunset Beach. It slept 8 of us comfortably and had everything we needed. Great stay!"
+                },
+                {
+                        "_id" : "276121129",
+                        "date" : ISODate("2018-06-12T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "12835961",
+                        "reviewer_name" : "Hans-Peter (HP)",
+                        "comments" : "Perfect place to spend time on the North Shore.... Puls recommend to everyone ....\nBig place lot of beaches around and sunset beach is in 10 min walking distance.\nAnderson was a great host ."
+                },
+                {
+                        "_id" : "278356494",
+                        "date" : ISODate("2018-06-17T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "46743021",
+                        "reviewer_name" : "Jordan",
+                        "comments" : "We loved staying at Anderson's place. The location was perfect - just a quick walk to Sunset Beach! The roosters were pretty loud the first morning, but were fine the rest of the trip. We would definitely recommend Anderson's place to anyone planning to stay on the North Shore!  "
+                },
+                {
+                        "_id" : "282605221",
+                        "date" : ISODate("2018-06-27T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "58269368",
+                        "reviewer_name" : "Lily",
+                        "comments" : "Very comfortable however we experienced a few water leaks ."
+                },
+                {
+                        "_id" : "292355034",
+                        "date" : ISODate("2018-07-17T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "192970379",
+                        "reviewer_name" : "Denise",
+                        "comments" : "A very authentic north shore experience.  Loved the framed Eddie Aikau Quicksilver Surf Comp posters ...and very comfy lounge area. The lanai with hammockwas awesome and the house is very well kept and clean as a whistle.  \nLots of Towels very fluffy ...and smelled wonderful.\nThere were heaps of beach towels too.\nKitchen good plenty of crockery and cutlery  but missing a kettle and a toaster.  \nThe washing machine and dryer are great: new and industrial sized  and they are downstairs in a room at back of house. Laundry is shared with downstairs unit. BYO laundry powder and pegs.\nAlso not many mozzies ...but we got a few bites and I'd suggest bring personal insect repellent. \nAnother hint: the house is upstairs ...and it's a fairly steep flight of stairs so wouldn't be suitable for people who couldn't manage these \nWe loved this area of the North Shore.  And we thought this airBnb is in an absolutely amazing location! The beautiful golden sand beach just across the road ...and the most amazing breakfasts at Ted's Bakery (2 minute walk). Overall this holiday accommodation far exceeded our expectations"
+                },
+                {
+                        "_id" : "315055664",
+                        "date" : ISODate("2018-08-27T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "124054260",
+                        "reviewer_name" : "Mahoninai",
+                        "comments" : "Very spacious which is very rare in Hawaii let alone in the North Shore.  You are literally a walking distance from the famous Ted’s Bakery.  You are right across from Pipeline, Sunset and tons of beaches.  Great location and great host.  Definitely recommend this place and would to stay here again. "
+                },
+                {
+                        "_id" : "324344676",
+                        "date" : ISODate("2018-09-16T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "144499473",
+                        "reviewer_name" : "Ruben",
+                        "comments" : "i had a amazing stay, wont regret it!!!"
+                },
+                {
+                        "_id" : "331846604",
+                        "date" : ISODate("2018-10-03T04:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "28345480",
+                        "reviewer_name" : "Stephanie",
+                        "comments" : "We really enjoyed our stay. The place was spotless and the location is excellent. Highly recommend!"
+                },
+                {
+                        "_id" : "346757973",
+                        "date" : ISODate("2018-11-09T05:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "79764848",
+                        "reviewer_name" : "Adrianne",
+                        "comments" : "The location of this home is superb. It is located on the inner side (not ocean side) of Kamehameha Highway. However, a quick cross of the highway at the driveway and a 3-5 min. walk and you are at Sunset Beach. You cannot see (or hear) the ocean from the house but it is hard to be the location. Ted’s Bakery is just down the highway, about a 4 min. walk as well. We enjoyed numerous meals there and the food is top quality!  Nice to have that so close. We stayed on the top level of the house. It was nice to have a personal bedroom for each of the three of us. We definitely appreciated the space. Amenities are basic but what we needed. Food cannot be left out as the ants will come. There is no A/C. It is best to not be in the house from say noon till sundown as it will be quite hot. However, opening the windows and bringing in the evening air is sufficient (we stayed the first week of November.) The occasional rain showers also helped to mediate the heat inside. Roosters begin their morning chatter around 4:30 am. Earplugs are a must if you are used to a more quiet sleeping environment. We had a few leaks in the roof on a day when the rains were heavier. We just moved the sofa out of the drip line and all was fine. We drove a lot around the island and this home was a great starting place for our day trips. Would definitely recommend this home for a stay in the North Shore."
+                },
+                {
+                        "_id" : "405854256",
+                        "date" : ISODate("2019-01-27T05:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "229760840",
+                        "reviewer_name" : "Whitney",
+                        "comments" : "Great spot on the North Shore. Would love to come back again! Thanks Anderson!"
+                },
+                {
+                        "_id" : "408852015",
+                        "date" : ISODate("2019-02-05T05:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "88786787",
+                        "reviewer_name" : "Haley",
+                        "comments" : "For the price, you can't get much better! Anderson was very responsive and his place was clean and ready to go for our family. He knew we were traveling with our 8 month old and had a crib set up on arrival. His place is very central and ideal if your into surfing, exploring, chilling and local eats. Will definitely come back :)"
+                },
+                {
+                        "_id" : "414164847",
+                        "date" : ISODate("2019-02-18T05:00:00Z"),
+                        "listing_id" : "4294289",
+                        "reviewer_id" : "15495229",
+                        "reviewer_name" : "Danny",
+                        "comments" : "This place is huge! There is plenty of room for everyone. It’s clean but there were a couple of items of concern. There were a lot of small stains on the couch. Don’t know if it’s people being careless with drinks or what, but nothing a slip cover couldn’t fix. We think the residence is on septic because there are signs in the bathrooms asking not to flush toilet paper, which seemed odd. I’m used to this in 3rd world countries, but not Hawaii. At first I chalked it up to the house being on the North Shore, but then we had guests over that are locals and they even commented on the signs and found it strange. \n\nThis is on the top floor of a house and I think the bottom floor is also an AirBnB along with another home on the property.  The first night the guests downstairs, some young men, were being very loud. I wasn’t sure if they were the permanent residents so I didn’t complain to the host. \n\nLastly, even though the house is setback from the road, since you have to leave the windows open for ventilation you will hear cars driving by all night. \n\nBUT the house is a 5 minute walk from Sunset Beach. There is a Foodland 2.3 miles away and Ted’s Bakery is about 100 yards away. It’s a GREAT location! And again it’s very roomy!!"
+                }
+        ]
+}
+
+Lab2: Array Operators
+db.listingsAndReviews.find({"$and": [{"property_type": "House"},{"amenities": {"$all": ["Changing table"]}}]}).count()
+11
+
+Lab: Array Operators and Projection
+db.companies.find({"offices":{"$elemMatch":{"city":"Seattle"}}}).count()
+117
+
+Lab 1: Querying Arrays and Sub-Documents
+db.trips.find({"start station location.coordinates.0": {"$lt": -74}}).count()
+1928
+
+Lab 2: Querying Arrays and Sub-Documents
+db.inspections.find({"address.city": "NEW YORK"}).count()
+18279
